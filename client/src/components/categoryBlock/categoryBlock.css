@@ -1,0 +1,45 @@
+.categoryBlock{
+    font-weight: 500;
+    font-size: 20px;
+    width: 12.5%;
+    padding: 1.5rem 0.75rem;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    text-align: center;
+    border-radius: var(--size-radius);
+    background: white;
+    border: 3px solid black;
+    box-shadow: .25rem .25rem 0 black;
+    transition: all 0.5s ease;  
+}
+
+.categoryBlockSelected{
+    color: gold;
+    border: 3px solid white;
+    background-color: rgba(0, 0, 0, 0.8);
+
+}
+
+.categoryBlock:hover{
+color: gold;
+background-color: rgba(0, 0, 0, 0.8);
+cursor: pointer;
+}
+
+
+.additionalService{
+    display: flex;
+    margin-top: 10px;
+}
+
+.additionalService span{
+    margin-left: 7.5px;
+}
+
+@media (max-width: 768px) {
+    .categoryBlock{
+        width: 100%;
+      
+    }
+}

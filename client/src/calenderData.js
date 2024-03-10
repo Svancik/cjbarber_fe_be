@@ -1,0 +1,26 @@
+export const bookedDates = [
+  {
+    id: 1,
+    date: "12.03.2024",
+    startTime: "10:00",
+    finishTime: "19:40",
+    klient_jmeno: "Jane Smith",
+    klient_telefon: "404121404",
+    klient_email: "client@client.com",
+    klient_cena: "500",
+    klient_sluzba: "Follow-up",
+    klient_sluzby_dodatecne: ["ServiceC"],
+  },
+  {
+    id: 2,
+    date: "13.03.2024",
+    startTime: "10:00",
+    finishTime: "12:40",
+    klient_jmeno: "Jane Smith",
+    klient_telefon: "404121404",
+    klient_email: "client@client.com",
+    klient_cena: "500",
+    klient_sluzba: "Follow-up",
+    klient_sluzby_dodatecne: ["ServiceC"],
+  },
+];

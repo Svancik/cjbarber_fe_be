@@ -1,0 +1,26 @@
+.galleryContainer .galleryCell {
+    width: 100%;
+    height: 100%;
+
+  }
+
+  @media screen and (min-width: 1024px) {
+    .bigItem {
+      grid-area: 1 / 3 / 4 / 5;
+    }
+
+    .mediumItem {
+        grid-area: 1 / 2 / 3 / 3;
+    }
+
+  }
+
+  @media (max-width: 768px) {
+    .bigItem {
+      grid-area: 1 / 2 / 3 / 3;
+    }
+
+    .mediumItem {
+        grid-area: 1 / 2 / 3 / 3;
+    }
+  }

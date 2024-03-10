@@ -1,0 +1,39 @@
+
+.servicesWrapper{
+    width: 100vw;
+    padding-top: 5rem;
+}
+
+.services{
+    width: 100%;
+    max-width: 1220px;
+    margin: auto;
+    text-align: center;
+    margin-top: -6rem;
+}
+
+.services .sluzby{
+    
+}
+
+.services .headerUnderline{
+    width: 420px;
+    height: 1px;
+    background-color: black;
+    font-weight: 900;
+    font-size: 32px;
+}
+   
+@media (max-width: 768px) {
+    .services .headerUnderline{
+        width: 80%;
+        height: 1px;
+        background-color: black;
+        font-weight: 900;
+        font-size: 32px;
+    }
+.services{
+    margin-top: -30px;
+    max-width: 100vw;
+}
+}

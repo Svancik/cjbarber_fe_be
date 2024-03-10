@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+            body { font-family: Arial, sans-serif; background-color: white }
+        .email-container { max-width: 600px; margin: auto; border: 1px solid #cccccc; border-radius: 5px; overflow: hidden; }
+        .header { background-color: black; padding: 20px; text-align: center; color:gold }
+        .content { padding: 20px; }
+        .footer { background-color: #f2f2f2; padding: 10px; text-align: center; font-size: 12px; }
+        .highlight { color: #333333; font-weight: bold; }
+        .services-list { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="header">
+            <h2>CJ's Barbershop - Vaše rezervace {{date}} v {{time}}</h2>
+        </div>
+        <div class="content">
+            <p>Nazdáááár {{clientName}} ({{clientPhone}}),</p>
+            <p>Díky za tvou rezervaci v CJ's Barbershop. Zde jsou detaily tvé nadcházející návštěvy:</p>
+            <ul>
+                <li>Datum: <span class="highlight">{{date}}</span></li>
+                <li>Čas: <span class="highlight">{{time}}</span></li>
+                <li>Služba: <span class="highlight">{{service}}</span></li>
+<li>Extra služby: <span class="highlight">{{additionalServices}}</span></li>
+
+                <li>Celková cena: <span class="highlight">{{totalPrice}} Kč</span></li>
+                <li>Trvání: <span class="highlight">{{duration}} minut</span></li>
+               
+            <p>Pokud máš nějaké otázky nebo potřebuješ změnit svou rezervaci, neváhej mě kontaktovat na čísle 777 607 447.</p>
+
+<p>Zruš svou rezervaci minimálně 2h před termínem, pokud rezervaci nezrušíš, bude ti při další návštěvě přičten příplatek 100Kč.</p>
+            <p>Těším se na tvou návštěvu!</p>
+            <img src="https://i.postimg.cc/3JYXCbdv/logo-Vector.png" alt="Logo"/>
+        </div>
+        <div class="footer">
+            S pozdravem,<br>
+            Váš tým CJ's Barbershop
+        </div>
+    </div>
+</body>
+</html>

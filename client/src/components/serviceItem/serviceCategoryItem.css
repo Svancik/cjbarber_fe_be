@@ -1,0 +1,112 @@
+.block{
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+
+
+.block .serviceWrapper{
+        width: 900px;
+        margin: auto;
+        text-align: justify;
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 5px;
+}
+        
+    
+.block .serviceWrapper .img{  
+            flex: 1.1;   
+        }
+
+.block .serviceWrapper .img .icon{
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            background-color: white;
+            padding: 10px;
+            border-radius: 50%;
+            margin-top: 5px;
+            padding-bottom: 15px;           
+        }
+    
+.block .serviceWrapper .desc{
+            flex: 8;
+            padding-right: 10px;
+            padding-left: 10px;
+}
+.block .serviceWrapper h5{
+    margin-top: 0;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    /* color: #1b0760; */
+    color: black;
+}
+
+
+.block .serviceWrapper .rightContent{
+        order: 2;
+        margin-left: 30px;    
+        text-align: right;
+        
+}
+
+.block .serviceWrapper .servicePrice{
+    margin-top: 10px;
+}
+
+.block .serviceWrapper .servicePrice span{
+    font-weight: 700;
+}
+
+.block .thinHR{
+    width: 75%;
+    height: 0.5px;
+}
+
+.block .desc ul{
+    list-style-type: square;
+    line-height: 1.5;
+}
+
+.serviceName{
+   color: black;
+   font-size: 1.25rem;
+}
+
+.servicePrice{
+    /* color: #1b0760; */
+    color: black;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+.servicePrice::before{
+    content: " -  ";
+}
+.servicePrice::after{
+    content: ",– ";
+}
+
+@media (max-width: 768px) {
+    .block .serviceWrapper{
+        width: 100vw;
+    }
+
+    .serviceWrapper .desc{
+        margin-top: 50px;
+        padding-left: 0px;
+        margin-left: -50px;
+    }
+    .block .serviceWrapper .img .icon{
+      position: absolute;
+      right: 10px;        
+    }
+
+    .block .desc ul{
+        list-style-type: square;
+        line-height: 1.5;
+        margin-left: -20px;
+    }
+
+}

@@ -1,0 +1,74 @@
+.footerWrapper {
+    width: 100vw;
+    margin: auto;
+    background-color: black;
+    color: white;
+    padding-top: 50px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    padding-left: 100px;
+}
+
+.footerWrapper .footerRow {
+    display: flex;
+    margin-left: 25px;
+    margin-bottom: 10px;
+    width: max-content;
+}
+
+.footerMiddle {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    max-width: 80%;
+}
+
+.footerRow span {
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.footerRow .bold {
+    font-weight: 500;
+}
+
+.footerWrapper .location {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+.location .name {
+    margin-top: -7.5px;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+/* Mobile view adjustments */
+@media (max-width: 768px) {
+    .footerWrapper {
+ 
+        padding: 40px 0px;
+        width:100vw;
+        margin-left: 0px;
+        justify-content: left; /* Center content for a cleaner look */
+       font-size: 14px; /* Optional: Reduce font size for mobile */
+    }
+
+    .footerMiddle {
+        justify-self: left;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: left; /* Center-align items for a better look */
+    }
+
+    .footerWrapper .footerRow {
+        margin-left: 0; /* Remove additional margin to align with the new layout */
+        justify-content: left; /* Center content for a cleaner look */
+        width: 100%; /* Expand rows to full container width */
+    }
+
+    .location .name {
+        font-size: 18px; /* Optional: Adjust title font size for mobile */
+    }
+}

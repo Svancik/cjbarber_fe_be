@@ -1,0 +1,51 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rezervaces",
+  "info": {
+    "singularName": "rezervace",
+    "pluralName": "rezervaces",
+    "displayName": "Rezervace"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "datum": {
+      "type": "date",
+      "required": true
+    },
+    "zacatek_cas": {
+      "type": "time",
+      "required": true
+    },
+    "konec_cas": {
+      "type": "time",
+      "required": true
+    },
+    "klient_jmeno": {
+      "type": "string",
+      "required": true
+    },
+    "klient_sluzba": {
+      "type": "string",
+      "required": true
+    },
+    "klient_sluzby_dodatecne": {
+      "type": "string",
+      "required": true
+    },
+    "klient_telefon": {
+      "type": "string",
+      "required": true
+    },
+    "klient_email": {
+      "type": "string",
+      "required": true
+    },
+    "klient_cena": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

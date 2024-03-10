@@ -1,0 +1,191 @@
+.reservationWrapper{
+    position: relative;    
+}
+
+.reservation .pageWrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures minimum height but allows extension */
+  }
+  
+  /* Navbar styling */
+  .reservation .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px; /* Fixed height */
+    z-index: 999999900; /* Ensure it's above other content */
+    background-color: white;
+  }
+  
+  /* Body styling */
+  .reservation .bodyContent {
+    flex: 1;
+    padding-top: 60px; /* Adjust this value if your navbar height changes */
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding does not add to total width */
+    background-image: url("../../media/samBG.jpg"); 
+    background-size: cover;
+  }
+  
+  /* Footer styling */
+  .reservation .footer {
+    /* No specific changes needed from the previous setup if you had any */
+    margin-top: auto; /* Ensures it sticks at the bottom of content */
+  }
+
+.arrowBackIcon{
+    position: absolute;
+    z-index: 99999;
+    height: 250px;
+    width: 250px;
+    top: 36.5%;
+    left: 4.25%;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    color: gold;
+    z-index: 1;
+
+}
+
+.arrowBackIcon:hover{
+    color: goldenrod;
+}
+
+.reservationSection {
+    width: 100vw;
+    height: 100%; /* Note: Originally mentioned as 72.5vh, but the style shows 82.25vh */
+    margin-top: 4rem;
+    margin-bottom: 0px;
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This will vertically center the child in the container */
+    
+}
+
+.reservationFrame {
+    min-height: 50%;
+    height: 100%;
+    padding-bottom: 60px;
+    padding-top: 20px;
+
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers the content inside the reservationFrame vertically */
+    text-align: center;
+    color: black;
+    border-radius: var(--size-radius);
+    background: rgba(255, 255, 255, 0.965);
+    border: 3px solid black;
+    box-shadow: .25rem .25rem 0 black;
+    transition: all 0.5s ease;
+    width: 72%;
+}
+
+.cancelReservation{
+    margin-top: -40px;
+    padding-bottom: 50px;
+
+}
+
+.reserveBtn{
+        background-color: black;
+        color: gold;
+        font-weight:600;
+        font-size: 20px;
+        outline: none;
+        padding: 15px 18px;
+        border: 1px solid gold;
+        width: 450px; 
+        margin: auto;
+        cursor: pointer;
+ 
+        transition: all 0.5s ease;  
+        position: relative;
+     
+    }
+    
+    .reserveBtn:hover{
+        background-color: gold;
+        color:black;
+        cursor: pointer;
+    }
+
+    .reserveBtn:disabled {
+        background-color: #afafaf; /* Grayed out */
+        cursor: not-allowed;
+        color: gold;
+      }
+
+      @media (max-width: 768px) {
+        .arrowBackIcon{
+            top: 70px;
+            left: 5px;
+            z-index: 9999999999;
+            width: 25px;
+            height: 25px;
+            color: black;
+        }
+
+        .reservation .bodyContent {
+            background-image: url("");
+            background-color: white;
+        }
+
+        .mobileFullWidth{
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .reservationSection{
+            margin-top: 0px;
+            padding: 0px;
+            margin: 0;
+            border: none;
+            box-shadow: none;           
+        }
+        .reservationFrame{
+            background-color: white;
+            position: absolute;
+            top: 0px;
+            padding-top: 20px;
+            width: 100%;
+            height: 100%;
+           padding-bottom: 0px;
+            border: none;
+            box-shadow: none;
+
+
+        }
+        .reserveBtn{
+            width: 100%;
+            left: 0px;
+            height: 60px;
+            bottom: 0px;
+            z-index: 999999;
+        }
+        .cancelReservation{
+            font-size: 1.5rem;
+            width: 95%;
+            padding: 10px;
+            text-align: center;
+        }
+        .pageWrapper {
+            min-height: 100vh; /* Allows content to expand beyond the viewport */
+
+        }
+    
+        .reservationSection, .reservationFrame {
+            /* Remove absolute positioning if used and ensure it's part of the document flow */
+            position: relative; /* Adjust as needed */
+            min-height: calc(90vh - 60px); /* Adjust based on navbar height, ensures minimum content height */
+        }
+        
+        .cancelReservation {
+            /* Adjust font size and padding as needed for mobile */
+        }
+      }

@@ -1,0 +1,233 @@
+.galleryWrapper{
+    width: 100vw;    
+    text-align: center;
+    margin-top: 10rem;
+    background-color: white;
+    color: black;
+    margin-top: 0rem;
+}
+
+.photosWrapper{
+  overflow: hidden;
+}
+
+.galleryWrapper .headerUnderline{
+    width: 420px;
+    height: 1px;
+}
+
+
+.galleryContainer {
+  margin-top: 50px;
+    display: grid;
+    height: 1000px;
+    /*pomocí repeat se budou hodnoty dle čísla v metodě tolikrát opakovat*/
+    /* grid-template-rows: repeat(3, 100px);
+    grid-template-columns: repeat(2, 100px); */
+    grid-template-rows: repeat(9, 1fr);
+     justify-items: center; /*Zarovná itemy uvnitř gridu horizontálně */
+    align-items: center; /*Zarovná itemy uvnitř gridu vertikálně */
+    justify-content: center; /*Zarovná CELÝ grid horizontálně*/
+    align-content: top; /*Zarovná CELÝ grid vertikálně */
+    margin-bottom: 50px;
+  }
+  .galleryItem {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transition: all ease-out 1s;
+  }
+
+  .gallerySliderImg{
+    width: 35%;
+    height: 85%;
+    object-fit: cover;
+    z-index: 9999;
+}
+
+  .galleryItem:hover{
+    cursor: pointer;
+    width: 104%;
+    height: 104%;
+    
+  }
+  
+  .galleryContainer .galleryCell {
+    width: 100%;
+    height: 100%;
+
+  }
+
+.gallerySlider .icon{
+  width: 50px;
+  height: 50px;
+  background-color: blue;
+}
+
+.hiddenContainer {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 0.9s ease, max-height 0.9s ease;
+}
+
+.hiddenContainer.show {
+  opacity: 1;
+  margin-top: 120px;
+  max-height: fit-content; /* Adjust as needed */
+  padding-bottom: 100px;
+}
+
+  .arrow{
+    width: 62px;
+    height: 62px;
+    font-size: 68px;
+    padding: 500px;
+    color: black;
+    
+  }
+
+  .viewMore{
+    height: 50px;
+    width: 50px;
+    text-align: center; 
+    background-color: black;
+    align-self: center;
+    line-height: 0px;
+    font-weight: 700;
+    color: gold;
+    border-color: gold;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    margin: auto;
+    -webkit-box-shadow: 1px 1px 16px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 16px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 16px 0px rgba(0,0,0,0.95);
+    transition: all 1s ease-out;
+      padding-top: -30px;
+    padding-left: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+    .galleryWrapper .gallerySlider{
+        position: fixed;
+        top: -70px;
+        left: 0;
+        width: 100vw;
+        height: 105vh;
+        background-color: rgba(0, 0, 0, 0.452);
+        z-index: 999;
+        display: flex;
+        justify-content: center;   
+        align-items: center;
+        margin: auto;
+        margin-top: 5vh;
+        overflow: hidden;
+     
+    }
+
+    .photo img{
+            width: 300px;
+            transition: transform 0.25s;
+    }
+
+    .photo img:hover{
+      cursor: pointer;
+      transform: scale(1.15);
+    }   
+
+.sliderWrapper{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow{
+    font-size: 55px;
+    padding: 15vw 5vw;
+    z-index: 9999999;
+    cursor: pointer;
+    color: gold;
+    width: 50px;
+    height: 50px;
+}
+
+.arrow:hover{
+    color: goldenrod;   
+
+}
+
+.close{
+    position: absolute;
+    top: 35px;
+    right: 25px;
+    font-size: 85px;
+   color: black;
+   border: 2px solid white;
+   background-color: white;
+   border-radius: 50%;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+}
+
+.close:hover{
+  color: rgb(173, 29, 29);
+
+}
+
+.col3{
+    grid-template-columns: 33% 33% 33%;
+}
+
+  @media screen and (min-width: 1024px) {
+    .galleryContainer {
+      grid-template: repeat(3, 350px) / repeat(4, 350px);
+      gap: 25px;
+    }
+    .bigItem {
+      grid-area: 1 / 3 / 4 / 5;
+    }
+  }
+
+@media (max-width: 768px) {
+
+  .galleryWrapper .headerUnderline{
+    width: 80%;
+    height: 1px;
+}
+.galleryWrapper{
+  margin-top: 15px;
+}
+.galleryContainer{
+  margin-top: -10px;
+  grid-template: repeat(2);
+  grid-template-rows: repeat(4, 1fr);
+  height: max-content;
+}
+
+.galleryItem:hover{
+  cursor:auto;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.hiddenContainer.show {
+  opacity: 1;
+  margin-top: -50px;
+  margin-bottom: -100px;
+  max-height: max-content; /* Adjust as needed */
+}
+.viewMore{
+  display: none;
+}
+.hiddenGallery{
+  display: block;
+
+}
+}

@@ -1,0 +1,114 @@
+.calendarWrapper{
+    margin-top: 5px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 20px;
+    align-items: center;
+}
+
+
+
+.datePicker{
+  flex: 0.65;
+    margin-top: 10px;
+}
+
+.timeBlock.blocked {
+  background-color: grey; /* or any other styling for a blocked time */
+  cursor: not-allowed;
+}
+
+.timeBlocksWrapper{
+  flex: 1.35;
+  padding-right: 4rem;
+}
+
+.timeBlocksWrapper h4{
+  text-align: left;
+}
+
+.timeBlocks{
+  width: 100%;
+  align-self: center;
+float: right;  
+  display: grid;   
+    grid-gap: 4px;
+    grid-template-rows:  1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  margin-top:30px;
+  margin-left: 100px;
+  line-height:50px;
+  justify-content: right;
+  row-gap: 4px;
+  margin-bottom: 5px;
+height: 400px;
+
+}
+
+.timeBlock{
+    float: left;
+    width: 97.5%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    align-items: center;
+    border: 1px solid black;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;  
+    transition: all 0.5s ease-in-out;
+}
+
+.timeBlock:hover{
+    background-color: black;
+    color: gold;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .calendarWrapper{
+    display: flex;
+    flex-direction: column;
+  }
+  .timeBlocksWrapper{
+    margin-left: 40px;
+    margin-top: -40px;
+    padding-bottom: 20px;
+    height: fit-content;
+  }
+  .datePicker{
+    flex: 1;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+
+  /* You may need to target specific inner classes of the DateCalendar, for example: */
+    .datePicker .MuiTextField-root { /* Example class, adjust based on actual implementation */
+      width: 100%;
+      font-size: inherit; /* This makes the input inherit the font-size from .datePicker */
+    }
+    .datePicker .MuiPickersCalendarHeader-labelContainer{
+      font-size: inherit;
+    }
+
+    .datePicker .MuiPickersCalendarHeader{
+      font-size: inherit;
+    }
+
+    /* Adjust the calendar popup size */
+    .datePicker .MuiPickersDay-root { /* Example class, adjust based on actual implementation */
+      width: 100%; /* Adjust if necessary */
+      font-size: inherit; /* Adjust font size */
+    }
+  .timeBlocks{
+    height: max-content;
+    
+    grid-template-rows:  1fr 1fr  1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+
