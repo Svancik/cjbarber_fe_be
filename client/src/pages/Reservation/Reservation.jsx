@@ -6,6 +6,8 @@ import { Calendar } from "../../components/calendar/Calendar";
 import { OverView } from "./../../components/overView/OverView";
 import { ClientInfo } from "../../components/clientInfo/ClientInfo";
 import { GoldButton } from "../../components/button/Buttons";
+import { Link, useNavigate } from "react-router-dom";
+
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import emailjs from "emailjs-com";
 import dayjs from "dayjs";
@@ -84,6 +86,39 @@ export const Reservation = () => {
         .join(", ");
     }
 
+    const postData = {
+      datum: selectedDateRecord.format("YYYY-MM-DD"),
+      zacatek_cas: dayjs(selectedTimeRecord, "HH:mm").format("HH:mm:ss.SSS"),
+      konec_cas: dayjs(selectedTimeRecord, "HH:mm")
+        .add(serviceTimeTotal, "minute")
+        .format("HH:mm:ss.SSS"),
+      klient_jmeno: clientData.fullName,
+      klient_sluzba: selectedService.nazev,
+      klient_sluzby_dodatecne: additionalServicesString,
+      klient_telefon: clientData.phone,
+      klient_email: clientData.email,
+      klient_cena: selectedService.cena + servicesTotalPrice,
+    };
+
+    const postReservationData = async () => {
+      console.log(postData);
+      try {
+        const response = await axios.post(process.env.REACT_APP_API_URL, {
+          data: postData, // Ensure this matches the expected format of your Strapi backend
+        });
+
+        // If you want to do something with the response, like updating the state
+        console.log("Successfully posted data", response.data);
+
+        // Optionally, refresh the data list or notify the user of success
+      } catch (err) {
+        console.error("Posting reservation failed:", err);
+        // Optionally, handle errors, e.g., show an error message to the user
+      }
+    };
+
+    postReservationData();
+
     const templateParams = {
       clientName: clientData.fullName,
       clienPhone: clientData.phone,
@@ -116,6 +151,12 @@ export const Reservation = () => {
       );
   };
   //https://www.emailjs.com/ POKRAČOVÁNÍ ZÍTRA
+
+  console.log(
+    dayjs(selectedTimeRecord, "HH:mm")
+      .add(serviceTimeTotal, "minute")
+      .format("HH:mm")
+  );
 
   return (
     <div className="reservation">
@@ -206,22 +247,24 @@ export const Reservation = () => {
                   zavolání, či SMS načíslo 777 607 447. V případě že rezervaci
                   nezrušíte, budete při další návštěvě platit příplatek 100Kč.
                 </span>
-                <button
-                  className="reserveBtn"
-                  text="Rezervovat termín"
-                  setStep={setStep}
-                  onClick={sendEmail}
-                  step={step}
-                  disabled={
-                    !(
-                      clientData.fullName &&
-                      clientData.email &&
-                      clientData.phone
-                    )
-                  }
-                >
-                  Rezervovat termín
-                </button>
+                <Link className="link" to="/">
+                  <button
+                    className="reserveBtn"
+                    text="Rezervovat termín"
+                    setStep={setStep}
+                    onClick={sendEmail}
+                    step={step}
+                    disabled={
+                      !(
+                        clientData.fullName &&
+                        clientData.email &&
+                        clientData.phone
+                      )
+                    }
+                  >
+                    Rezervovat termín
+                  </button>
+                </Link>
               </div>
             </div>
           )}
